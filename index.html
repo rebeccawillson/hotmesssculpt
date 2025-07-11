@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hot Mess Sculpt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #a36f3c;
+      --accent-color: #e9dfd1;
+      --bg-color: #fefbf8;
+      --text-color: #3e3e3e;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: var(--accent-color);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+    .services li {
+      background: #f9f6f1;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-left: 5px solid var(--primary-color);
+      border-radius: 6px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .contact-form button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      font-size: 0.9rem;
+    }
+    .social-embed {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .social-embed a {
+      display: block;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      border: 2px solid var(--primary-color);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .social-embed a:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Hot Mess Sculpt</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Sculpt. Snatch. Slay.</h1>
+    <p>Professional body sculpting in a fun, empowering space.</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>Hot Mess Sculpt is a body sculpting business offering non-invasive treatments to help you feel confident and fabulous. We’re all about boosting your glow with expert care and good vibes.</p>
+  </section>
+
+  <section class="section services" id="services">
+    <h2>Services & Pricing</h2>
+    <p>Stay tuned for our pre-sale prices! Make sure to follow our socials and check back at a later date.</p>
+  </section>
+
+  <section class="section" id="booking">
+    <h2>Book Your Appointment</h2>
+    <p>Booking link coming soon!</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <h2>Follow Us</h2>
+    <div class="social-embed">
+      <a href="https://www.instagram.com/hotmesssculpt" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@hotmess.sculpt" target="_blank">TikTok</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Hot Mess Sculpt. All rights reserved.
+  </footer>
+</body>
+</html>
