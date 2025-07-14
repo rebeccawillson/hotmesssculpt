@@ -11,16 +11,20 @@
       --accent-color: #ffe7ec;      /* blush peach */
       --highlight-color: #f8c8dc;   /* pastel rose */
       --text-color: #4b3b3b;        /* warm gray text */
-      --bg-color: #fffaf7;          /* soft cream background */
+      --bg-color: var(--accent-color); /* full page pink background */
     }
     * {
       box-sizing: border-box;
     }
-    body {
-      font-family: 'DM Sans', sans-serif;
+    body, html {
+      height: 100%;
       margin: 0;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -32,6 +36,7 @@
       color: white;
       position: relative;
       flex-wrap: wrap;
+      flex-shrink: 0;
     }
 
     /* Center container for logo */
@@ -130,14 +135,22 @@
       color: white;
     }
 
-    /* Hero */
-    .hero {
-      padding: 6rem 2rem;
+    /* Main content wrapper to center hero vertically */
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
       text-align: center;
-      background: var(--accent-color);
-      color: var(--text-color);
       max-width: 900px;
-      margin: 0 auto 3rem auto;
+      margin: 0 auto;
+    }
+
+    /* Hero styles */
+    .hero {
+      margin-bottom: 3rem;
     }
     .hero .main-title {
       font-size: 3rem;
@@ -150,6 +163,55 @@
       line-height: 1.6;
       max-width: 700px;
       margin: 0 auto;
+    }
+
+    /* Contact section styles */
+    .section {
+      background: white;
+      padding: 3rem 2rem;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+      color: var(--text-color);
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: var(--highlight-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: var(--primary-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f3ece9;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      color: var(--text-color);
     }
 
     @media (max-width: 768px) {
@@ -176,77 +238,9 @@
       .hero .description {
         font-size: 1rem;
       }
-    }
-
-    /* Other sections and footer styles remain unchanged */
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
-      background: #fceef2;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      border-left: 5px solid var(--highlight-color);
-      border-radius: 6px;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .contact-form button {
-      background: var(--highlight-color);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-    }
-    .contact-form button:hover {
-      background: var(--primary-color);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #f3ece9;
-      font-size: 0.9rem;
-    }
-    .social-embed {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .social-embed a {
-      display: block;
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      background: var(--highlight-color);
-      border: 2px solid var(--highlight-color);
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .social-embed a:hover {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
+      .section {
+        padding: 2rem 1rem;
+      }
     }
   </style>
 </head>
@@ -278,45 +272,24 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1 class="main-title">Hot Mess Sculpt</h1>
-    <p class="description">
-      At Hot Mess Sculpt, every class is a full-body, full-sweat experience powered by infrared heat, set to curated playlists, and led by instructors who balance challenge with creativity. Our beat-based formats blend music, movement, and heat to unlock strength, clarity, and energy - and most of all, to empower you to own your body, your mindset, and your movement.
-    </p>
-  </section>
+  <main>
+    <section class="hero">
+      <h1 class="main-title">Hot Mess Sculpt</h1>
+      <p class="description">
+        At Hot Mess Sculpt, every class is a full-body, full-sweat experience powered by infrared heat, set to curated playlists, and led by instructors who balance challenge with creativity. Our beat-based formats blend music, movement, and heat to unlock strength, clarity, and energy - and most of all, to empower you to own your body, your mindset, and your movement.
+      </p>
+    </section>
 
-  <section class="section" id="about">
-    <h2>About Us</h2>
-    <p>Hot Mess Sculpt is a body sculpting business offering non-invasive treatments to help you feel confident and fabulous. We’re all about boosting your glow with expert care and good vibes.</p>
-  </section>
-
-  <section class="section services" id="services">
-    <h2>Services & Pricing</h2>
-    <p>Stay tuned for our pre-sale prices! Make sure to follow our socials and check back at a later date.</p>
-  </section>
-
-  <section class="section" id="booking">
-    <h2>Book Your Appointment</h2>
-    <p>Booking link coming soon!</p>
-  </section>
-
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <section class="section">
-    <h2>Follow Us</h2>
-    <div class="social-embed">
-      <a href="https://www.instagram.com/hotmesssculpt" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@hotmess.sculpt" target="_blank">TikTok</a>
-    </div>
-  </section>
+    <section class="section" id="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Hot Mess Sculpt. All rights reserved.
