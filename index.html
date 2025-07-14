@@ -132,17 +132,24 @@
 
     /* Hero */
     .hero {
-      padding: 4rem 2rem;
+      padding: 6rem 2rem;
       text-align: center;
       background: var(--accent-color);
+      color: var(--text-color);
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
     }
-    .hero h1 {
-      font-size: 2.5rem;
+    .hero .main-title {
+      font-size: 3rem;
+      font-weight: 700;
       margin-bottom: 1rem;
+      color: var(--primary-color);
     }
-    .hero p {
+    .hero .description {
       font-size: 1.2rem;
-      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     @media (max-width: 768px) {
@@ -163,12 +170,83 @@
         justify-content: center;
         flex-wrap: wrap;
       }
-      .hero h1 {
-        font-size: 2rem;
+      .hero .main-title {
+        font-size: 2.2rem;
       }
-      .hero p {
+      .hero .description {
         font-size: 1rem;
       }
+    }
+
+    /* Other sections and footer styles remain unchanged */
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+    .services li {
+      background: #fceef2;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-left: 5px solid var(--highlight-color);
+      border-radius: 6px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .contact-form button {
+      background: var(--highlight-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .contact-form button:hover {
+      background: var(--primary-color);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f3ece9;
+      font-size: 0.9rem;
+    }
+    .social-embed {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .social-embed a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      background: var(--highlight-color);
+      border: 2px solid var(--highlight-color);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .social-embed a:hover {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
     }
   </style>
 </head>
@@ -201,11 +279,47 @@
   </header>
 
   <section class="hero">
-    <h1>Sculpt. Snatch. Slay.</h1>
-    <p>Professional body sculpting in a fun, empowering space.</p>
+    <h1 class="main-title">Hot Mess Sculpt</h1>
+    <p class="description">
+      At Hot Mess Sculpt, every class is a full-body, full-sweat experience powered by infrared heat, set to curated playlists, and led by instructors who balance challenge with creativity. Our beat-based formats blend music, movement, and heat to unlock strength, clarity, and energy - and most of all, to empower you to own your body, your mindset, and your movement.
+    </p>
   </section>
 
-  <!-- Your other sections here -->
+  <section class="section" id="about">
+    <h2>About Us</h2>
+    <p>Hot Mess Sculpt is a body sculpting business offering non-invasive treatments to help you feel confident and fabulous. We’re all about boosting your glow with expert care and good vibes.</p>
+  </section>
 
+  <section class="section services" id="services">
+    <h2>Services & Pricing</h2>
+    <p>Stay tuned for our pre-sale prices! Make sure to follow our socials and check back at a later date.</p>
+  </section>
+
+  <section class="section" id="booking">
+    <h2>Book Your Appointment</h2>
+    <p>Booking link coming soon!</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="section">
+    <h2>Follow Us</h2>
+    <div class="social-embed">
+      <a href="https://www.instagram.com/hotmesssculpt" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@hotmess.sculpt" target="_blank">TikTok</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Hot Mess Sculpt. All rights reserved.
+  </footer>
 </body>
 </html>
