@@ -7,12 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #a36f3c;
-      --accent-color: #e9dfd1;
-      --bg-color: #fefbf8;
-      --text-color: #3e3e3e;
+      --primary-color: #855141;     /* warm brown */
+      --accent-color: #ff75b5;      /* soft blush pink */
+      --highlight-color: #fa7f32;   /* peachy orange */
+      --text-color: #3e3e3e;        /* dark text */
+      --bg-color: #fefbf8;          /* off-white background */
     }
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -43,15 +46,35 @@
       text-align: center;
       background: var(--accent-color);
     }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
     .section {
       padding: 3rem 2rem;
       max-width: 1000px;
       margin: 0 auto;
     }
-    .section h2 { font-size: 2rem; margin-bottom: 1rem; }
-    .contact-form input, .contact-form textarea {
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+    }
+    .services li {
+      background: #f9f6f1;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-left: 5px solid var(--highlight-color);
+      border-radius: 6px;
+    }
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
@@ -59,13 +82,16 @@
       border-radius: 6px;
     }
     .contact-form button {
-      background: var(--primary-color);
+      background: var(--highlight-color);
       color: white;
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
       font-weight: 600;
       cursor: pointer;
+    }
+    .contact-form button:hover {
+      background: var(--primary-color);
     }
     footer {
       text-align: center;
@@ -82,17 +108,19 @@
     .social-embed a {
       display: block;
       text-decoration: none;
-      color: var(--primary-color);
+      color: white;
       font-weight: 600;
-      border: 2px solid var(--primary-color);
+      background: var(--highlight-color);
+      border: 2px solid var(--highlight-color);
       padding: 1rem 2rem;
       border-radius: 8px;
       transition: background 0.3s, color 0.3s;
     }
     .social-embed a:hover {
       background: var(--primary-color);
-      color: white;
+      border-color: var(--primary-color);
     }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -103,9 +131,15 @@
         justify-content: center;
         margin-top: 0.5rem;
       }
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .section h2 { font-size: 1.5rem; }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
