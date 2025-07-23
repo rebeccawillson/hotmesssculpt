@@ -6,23 +6,27 @@
   <title>About - Hot Mess Sculpt</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Same styles as index.html header/footer for consistency */
     :root {
-      --primary-color: #deb1a7;
-      --accent-color: #ffe7ec;
-      --highlight-color: #f8c8dc;
-      --text-color: #4b3b3b;
-      --bg-color: #fffaf7;
+      --primary-color: #deb1a7;     /* dusty pink */
+      --accent-color: #ffe7ec;      /* blush peach */
+      --highlight-color: #f8c8dc;   /* pastel rose */
+      --text-color: #4b3b3b;        /* warm gray text */
+      --bg-color: var(--accent-color); /* pink background */
     }
-    body {
-      font-family: 'DM Sans', sans-serif;
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
       margin: 0;
+      font-family: 'DM Sans', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
+
     header {
       display: flex;
       align-items: center;
@@ -34,11 +38,13 @@
       flex-wrap: wrap;
       flex-shrink: 0;
     }
+
     .logo-container {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
     }
+
     .logo-button {
       background: none;
       border: none;
@@ -51,23 +57,59 @@
     .logo-button:hover {
       opacity: 0.8;
     }
+
     nav {
       display: flex;
       gap: 1.5rem;
       font-weight: 600;
       font-size: 1rem;
       flex-wrap: wrap;
+      position: relative;
     }
-    nav a {
+    nav a, nav .dropdown-toggle {
       color: white;
       text-decoration: none;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       transition: background 0.3s ease;
+      cursor: pointer;
     }
-    nav a:hover {
+    nav a:hover, nav .dropdown-toggle:hover {
       background: rgba(255 255 255 / 0.2);
     }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+    }
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: var(--primary-color);
+      margin-top: 0.25rem;
+      border-radius: 6px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      min-width: 180px;
+      z-index: 10;
+      flex-direction: column;
+    }
+    .dropdown-content a {
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      display: block;
+      font-weight: 400;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255 255 255 / 0.3);
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+      flex-direction: column;
+    }
+
     .header-right {
       display: flex;
       align-items: center;
@@ -75,6 +117,7 @@
       margin-left: auto;
       font-weight: 600;
     }
+
     .social-icons {
       display: flex;
       gap: 1rem;
@@ -93,6 +136,7 @@
       height: 24px;
       fill: white;
     }
+
     .login-link {
       color: white;
       text-decoration: none;
@@ -104,6 +148,7 @@
     .login-link:hover {
       background: rgba(255 255 255 / 0.2);
     }
+
     .join-button {
       background: var(--highlight-color);
       color: var(--primary-color);
@@ -119,34 +164,35 @@
       background: var(--primary-color);
       color: white;
     }
+
     main {
       flex-grow: 1;
+      padding: 3rem 2rem;
       max-width: 900px;
-      margin: 3rem auto 4rem auto;
-      padding: 0 2rem;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
-      text-align: center;
-    }
-    p {
-      font-size: 1.15rem;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
+      margin: 0 auto 3rem auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
       color: var(--text-color);
     }
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
       background: #f3ece9;
       font-size: 0.9rem;
-      color: var(--text-color);
       flex-shrink: 0;
+      color: var(--text-color);
     }
+
     @media (max-width: 768px) {
       header {
         justify-content: center;
@@ -165,11 +211,9 @@
         justify-content: center;
         flex-wrap: wrap;
       }
-      h1 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
+      main {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
       }
     }
   </style>
@@ -177,10 +221,19 @@
 <body>
   <header>
     <nav>
-      <a href="about.html" aria-current="page">About</a>
-      <a href="services.html">Services</a>
-      <a href="booking.html">Booking</a>
-      <a href="#contact">Contact</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <span class="dropdown-toggle">Class Formats</span>
+        <div class="dropdown-content">
+          <a href="heated-sculpt.html">Heated Sculpt</a>
+          <a href="heated-power-yoga.html">Heated Power Yoga</a>
+          <a href="heated-hiit.html">Heated HIIT</a>
+          <a href="heated-mat-pilates.html">Heated Mat Pilates</a>
+          <a href="heated-strength.html">Heated Strength</a>
+        </div>
+      </div>
+      <a href="pricing.html">Pricing</a>
+      <a href="faqs.html">FAQs</a>
     </nav>
 
     <div class="logo-container">
@@ -196,17 +249,17 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.29 7.3v9.42a3.29 3.29 0 11-3.29-3.29V8.11l2.16.57zM16 7.23a6.23 6.23 0 01-3.68-1.15v8.41a4.3 4.3 0 11-4.3-4.3v10.5h3.35v-9.41a6.23 6.23 0 006.63 6.21v-3.46a6.22 6.22 0 01-2-1.8z"/></svg>
         </a>
       </div>
-
-      <a href="login.html" class="login-link">Login</a>
-      <button class="join-button" onclick="window.location.href='booking.html'">Join Now</button>
+      <a href="#login" class="login-link">Login</a>
+      <button class="join-button" onclick="window.location.href='index.html#booking'">Join Now</button>
     </div>
   </header>
 
   <main>
-    <h1>About Us</h1>
+    <h1>About Hot Mess Sculpt</h1>
     <p>
       Hot Mess Sculpt is a body sculpting business offering non-invasive treatments to help you feel confident and fabulous. We’re all about boosting your glow with expert care and good vibes.
     </p>
+    <!-- You can add more detailed content here if you'd like -->
   </main>
 
   <footer>
