@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Heated HIIT – Hot Mess Sculpt</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #deb1a7;
+      --accent-color: #ffe7ec;
+      --highlight-color: #f8c8dc;
+      --text-color: #4b3b3b;
+      --bg-color: #fffaf7;
+    }
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    nav a, nav .dropdown > a {
+      color: white;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+    nav a:hover, nav .dropdown:hover > a {
+      background: rgba(255 255 255 / 0.2);
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 8px 15px rgba(0,0,0,0.15);
+      z-index: 1;
+      border-radius: 6px;
+      overflow: hidden;
+      top: 100%;
+      left: 0;
+    }
+    .dropdown-content a {
+      color: var(--text-color);
+      padding: 0.75rem 1rem;
+      display: block;
+      text-decoration: none;
+      background: white;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover {
+      background-color: var(--accent-color);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .logo-container {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .logo-button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: 700;
+      font-size: 1.75rem;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .logo-button:hover {
+      opacity: 0.8;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+      font-weight: 600;
+    }
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+    }
+    .social-icons a {
+      display: inline-flex;
+      color: white;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .social-icons a:hover {
+      opacity: 0.7;
+    }
+    .social-icons svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+    .login-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .login-link:hover {
+      background: rgba(255 255 255 / 0.2);
+    }
+    .join-button {
+      background: var(--highlight-color);
+      color: var(--primary-color);
+      font-weight: 700;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .join-button:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 2rem auto;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f3ece9;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#" onclick="return false;">Class Formats ▾</a>
+        <div class="dropdown-content">
+          <a href="heated-sculpt.html">Heated Sculpt</a>
+          <a href="heated-power-yoga.html">Heated Power Yoga</a>
+          <a href="heated-hiit.html">Heated HIIT</a>
+          <a href="heated-mat-pilates.html">Heated Mat Pilates</a>
+          <a href="heated-strength.html">Heated Strength</a>
+        </div>
+      </div>
+      <a href="pricing.html">Pricing</a>
+      <a href="faqs.html">FAQs</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="logo-container">
+      <button class="logo-button" onclick="window.location.href='index.html'">Hot Mess Sculpt</button>
+    </div>
+
+    <div class="header-right">
+      <div class="social-icons">
+        <a href="https://www.instagram.com/hotmesssculpt" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5a3.75 3.75 0 003.75-3.75v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 2.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@hotmess.sculpt" target="_blank" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.29 7.3v9.42a3.29 3.29 0 11-3.29-3.29V8.11l2.16.57zM16 7.23a6.23 6.23 0 01-3.68-1.15v8.41a4.3 4.3 0 11-4.3-4.3v10.5h3.35v-9.41a6.23 6.23 0 006.63 6.21v-3.46a6.22 6.22 0 01-2-1.8z"/></svg>
+        </a>
+      </div>
+      <a href="#login" class="login-link">Login</a>
+      <button class="join-button" onclick="window.location.href='index.html#booking'">Join Now</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>Heated HIIT</h1>
+    <p>
+      Heated HIIT offers a high-intensity interval training experience amplified by infrared heat, designed to boost your metabolism, endurance, and strength in a sweat-filled session.
+    </p>
+    <!-- Add more detailed content here -->
+  </main>
+
+  <footer>
+    &copy; 2025 Hot Mess Sculpt. All rights reserved.
+  </footer>
+</body>
+</html>
