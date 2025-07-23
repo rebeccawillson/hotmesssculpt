@@ -7,17 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #deb1a7;
-      --accent-color: #ffe7ec;
-      --highlight-color: #f8c8dc;
-      --text-color: #4b3b3b;
-      --bg-color: var(--accent-color);
+      --primary-color: #deb1a7;     /* dusty pink */
+      --accent-color: #ffe7ec;      /* blush peach */
+      --highlight-color: #f8c8dc;   /* pastel rose */
+      --text-color: #4b3b3b;        /* warm gray text */
+      --bg-color: var(--accent-color); /* full page pink background */
     }
-
     * {
       box-sizing: border-box;
     }
-
     body, html {
       height: 100%;
       margin: 0;
@@ -27,6 +25,8 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      position: relative;
+      padding-bottom: 50px; /* space for bottom bar */
     }
 
     header {
@@ -41,7 +41,6 @@
       flex-shrink: 0;
     }
 
-    /* Center container for logo */
     .logo-container {
       position: absolute;
       left: 50%;
@@ -67,18 +66,53 @@
       font-weight: 600;
       font-size: 1rem;
       flex-wrap: wrap;
-      align-items: center;
+      position: relative;
+      align-items: center; /* Align nav items vertically */
     }
-    nav a, nav .dropdown > a {
+    nav a, nav .dropdown-toggle {
       color: white;
       text-decoration: none;
       padding: 0.25rem 0.5rem;
       border-radius: 4px;
       transition: background 0.3s ease;
       cursor: pointer;
+      display: flex;
+      align-items: center; /* Vertically center text */
     }
-    nav a:hover, nav .dropdown:hover > a {
+    nav a:hover, nav .dropdown-toggle:hover {
       background: rgba(255 255 255 / 0.2);
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+    }
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: var(--primary-color);
+      margin-top: 0.25rem;
+      border-radius: 6px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      min-width: 180px;
+      z-index: 10;
+      flex-direction: column;
+    }
+    .dropdown-content a {
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      display: block;
+      font-weight: 400;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255 255 255 / 0.3);
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+      flex-direction: column;
     }
 
     .header-right {
@@ -89,44 +123,6 @@
       font-weight: 600;
     }
 
-    /* Dropdown Styles */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 180px;
-      box-shadow: 0px 8px 15px rgba(0,0,0,0.15);
-      z-index: 1;
-      border-radius: 6px;
-      overflow: hidden;
-      top: 100%;
-      left: 0;
-    }
-
-    .dropdown-content a {
-      color: var(--text-color);
-      padding: 0.75rem 1rem;
-      display: block;
-      text-decoration: none;
-      background: white;
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
-    .dropdown-content a:hover {
-      background-color: var(--accent-color);
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Social icons */
     .social-icons {
       display: flex;
       gap: 1rem;
@@ -146,7 +142,6 @@
       fill: white;
     }
 
-    /* Login link */
     .login-link {
       color: white;
       text-decoration: none;
@@ -159,7 +154,6 @@
       background: rgba(255 255 255 / 0.2);
     }
 
-    /* Join Now button */
     .join-button {
       background: var(--highlight-color);
       color: var(--primary-color);
@@ -176,7 +170,6 @@
       color: white;
     }
 
-    /* Main content wrapper to center hero vertically */
     main {
       flex-grow: 1;
       display: flex;
@@ -255,6 +248,22 @@
       color: var(--text-color);
     }
 
+    /* Bottom bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
     @media (max-width: 768px) {
       header {
         justify-content: center;
@@ -288,10 +297,10 @@
 <body>
   <header>
     <nav>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
-
       <div class="dropdown">
-        <a href="#" onclick="return false;">Class Formats ▾</a>
+        <span class="dropdown-toggle">Class Formats</span>
         <div class="dropdown-content">
           <a href="heated-sculpt.html">Heated Sculpt</a>
           <a href="heated-power-yoga.html">Heated Power Yoga</a>
@@ -300,10 +309,8 @@
           <a href="heated-strength.html">Heated Strength</a>
         </div>
       </div>
-
       <a href="pricing.html">Pricing</a>
       <a href="faqs.html">FAQs</a>
-      <a href="#contact">Contact</a>
     </nav>
 
     <div class="logo-container">
@@ -321,7 +328,7 @@
       </div>
 
       <a href="#login" class="login-link">Login</a>
-      <button class="join-button" onclick="window.location.href='#booking'">Join Now</button>
+      <button class="join-button" onclick="window.location.href='index.html#booking'">Join Now</button>
     </div>
   </header>
 
@@ -336,8 +343,8 @@
     <section class="section" id="contact">
       <h2>Contact Us</h2>
       <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" rows="5" required></textarea>
         <button type="submit">Send Message</button>
       </form>
@@ -347,5 +354,9 @@
   <footer>
     &copy; 2025 Hot Mess Sculpt. All rights reserved.
   </footer>
+
+  <div class="bottom-bar">
+    The Hot Mess Sculpt app coming soon! Sign up to be the first to know.
+  </div>
 </body>
 </html>
