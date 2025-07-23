@@ -6,30 +6,74 @@
   <title>Class Formats – Hot Mess Sculpt</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'DM Sans', sans-serif;
-      margin: 0;
-      background: #fffaf7;
-      color: #4b3b3b;
+    :root {
+      --primary-color: #deb1a7;
+      --accent-color: #ffe7ec;
+      --highlight-color: #f8c8dc;
+      --text-color: #4b3b3b;
+      --bg-color: #fffaf7;
     }
-    header, footer {
-      background: #deb1a7;
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background: var(--primary-color);
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
     main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
     }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      text-align: center;
+
+    section {
+      margin-bottom: 2.5rem;
     }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
     p {
+      font-size: 1.1rem;
       line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background: #f3ece9;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -39,11 +83,34 @@
   </header>
 
   <main>
-    <p>Coming soon! This page will include details about all the different Hot Mess Sculpt class types — from high-intensity burn sessions to slower sculpt flows. Each format is designed to energize and empower.</p>
+    <section id="heated-sculpt">
+      <h2>Heated Sculpt</h2>
+      <p>A full-body sculpting class using infrared heat to maximize calorie burn and tone muscles in a supportive, energizing environment.</p>
+    </section>
+
+    <section id="heated-power-yoga">
+      <h2>Heated Power Yoga</h2>
+      <p>Dynamic yoga flows in a heated room designed to build strength, flexibility, and mindfulness for all levels.</p>
+    </section>
+
+    <section id="heated-hiit">
+      <h2>Heated HIIT</h2>
+      <p>High-Intensity Interval Training powered by heat and music to boost endurance, metabolism, and energy in quick, effective bursts.</p>
+    </section>
+
+    <section id="heated-mat-pilates">
+      <h2>Heated Mat Pilates</h2>
+      <p>Core-focused Pilates exercises done on the mat in a heated environment to strengthen, lengthen, and stabilize your muscles.</p>
+    </section>
+
+    <section id="heated-strength">
+      <h2>Heated Strength</h2>
+      <p>Strength training with weights and resistance in a heated room designed to increase muscle tone and power.</p>
+    </section>
   </main>
 
   <footer>
-    &copy; 2025 Hot Mess Sculpt
+    &copy; 2025 Hot Mess Sculpt. All rights reserved.
   </footer>
 </body>
 </html>
