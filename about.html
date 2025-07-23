@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About - Hot Mess Sculpt</title>
+  <title>Hot Mess Sculpt</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -11,7 +11,7 @@
       --accent-color: #ffe7ec;      /* blush peach */
       --highlight-color: #f8c8dc;   /* pastel rose */
       --text-color: #4b3b3b;        /* warm gray text */
-      --bg-color: var(--accent-color); /* pink background */
+      --bg-color: var(--accent-color); /* full page pink background */
     }
     * {
       box-sizing: border-box;
@@ -25,6 +25,8 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      position: relative;
+      padding-bottom: 50px; /* space for bottom bar */
     }
 
     header {
@@ -170,24 +172,71 @@
 
     main {
       flex-grow: 1;
-      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Hero styles */
+    .hero {
+      margin-bottom: 3rem;
+    }
+    .hero .main-title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+    .hero .description {
+      font-size: 1.2rem;
+      line-height: 1.6;
       max-width: 700px;
-      margin: 2rem auto 3rem auto; /* added margin-top to separate from header */
+      margin: 0 auto;
+    }
+
+    /* Contact section styles */
+    .section {
       background: white;
+      padding: 3rem 2rem;
+      max-width: 600px;
       border-radius: 12px;
       box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
       color: var(--text-color);
-      text-align: left;
-      line-height: 1.6;
     }
-    main h1 {
-      font-size: 2.5rem;
+    .section h2 {
+      font-size: 2rem;
       margin-bottom: 1rem;
-      text-transform: capitalize;
     }
-    main p {
-      font-size: 1.1rem;
-      white-space: pre-line; /* keep line breaks from text */
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: var(--highlight-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      background: var(--primary-color);
     }
 
     footer {
@@ -197,6 +246,22 @@
       font-size: 0.9rem;
       flex-shrink: 0;
       color: var(--text-color);
+    }
+
+    /* Bottom bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
     }
 
     @media (max-width: 768px) {
@@ -217,10 +282,14 @@
         justify-content: center;
         flex-wrap: wrap;
       }
-      main {
+      .hero .main-title {
+        font-size: 2.2rem;
+      }
+      .hero .description {
+        font-size: 1rem;
+      }
+      .section {
         padding: 2rem 1rem;
-        margin-bottom: 2rem;
-        max-width: 90%;
       }
     }
   </style>
@@ -228,6 +297,7 @@
 <body>
   <header>
     <nav>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <div class="dropdown">
         <span class="dropdown-toggle">Class Formats</span>
@@ -256,26 +326,37 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.29 7.3v9.42a3.29 3.29 0 11-3.29-3.29V8.11l2.16.57zM16 7.23a6.23 6.23 0 01-3.68-1.15v8.41a4.3 4.3 0 11-4.3-4.3v10.5h3.35v-9.41a6.23 6.23 0 006.63 6.21v-3.46a6.22 6.22 0 01-2-1.8z"/></svg>
         </a>
       </div>
+
       <a href="#login" class="login-link">Login</a>
       <button class="join-button" onclick="window.location.href='index.html#booking'">Join Now</button>
     </div>
   </header>
 
   <main>
-    <h1>About</h1>
-    <p>
-      Hot Mess Sculpt is where music, movement, and heat come together to create a workout experience like no other. We offer full-body, full-sweat classes that challenge you, uplift you, and leave you feeling strong, confident, and empowered.<br><br>
+    <section class="hero">
+      <h1 class="main-title">Hot Mess Sculpt</h1>
+      <p class="description">
+        At Hot Mess Sculpt, every class is a full-body, full-sweat experience powered by infrared heat, set to curated playlists, and led by instructors who balance challenge with creativity. Our beat-based formats blend music, movement, and heat to unlock strength, clarity, and energy - and most of all, to empower you to own your body, your mindset, and your movement.
+      </p>
+    </section>
 
-      Our infrared-heated studio offers a variety of high-energy class formats to keep your routine fresh- including formats such as sculpt, power yoga, HIIT, pilates, and strength. Every class is set to a curated playlist and led by top instructors.<br><br>
-
-      We’re not here for perfection - we’re here for real people who want to move, sweat, and feel good doing it. Whether you’re here to gain strength, increase flexibility, build endurance, clear your mind, or just to let loose, there is a spot for you in the Hot Mess Fam.<br><br>
-
-      Coming to Union County, NJ in Fall 2025
-    </p>
+    <section class="section" id="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
   </main>
 
   <footer>
     &copy; 2025 Hot Mess Sculpt. All rights reserved.
   </footer>
+
+  <div class="bottom-bar">
+    The Hot Mess Sculpt app coming soon! Sign up to be the first to know.
+  </div>
 </body>
 </html>
