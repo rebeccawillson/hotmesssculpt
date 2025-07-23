@@ -26,7 +26,7 @@
       flex-direction: column;
       min-height: 100vh;
       position: relative;
-      padding-bottom: 50px; /* space for bottom bar */
+      padding-bottom: 70px; /* enough space for footer */
     }
 
     header {
@@ -67,7 +67,7 @@
       font-size: 1rem;
       flex-wrap: wrap;
       position: relative;
-      align-items: center; /* Align nav items vertically */
+      align-items: center;
     }
     nav a, nav .dropdown-toggle {
       color: white;
@@ -77,17 +77,15 @@
       transition: background 0.3s ease;
       cursor: pointer;
       display: flex;
-      align-items: center; /* Vertically center text */
+      align-items: center;
     }
     nav a:hover, nav .dropdown-toggle:hover {
       background: rgba(255 255 255 / 0.2);
     }
 
-    /* Dropdown container */
     .dropdown {
       position: relative;
     }
-    /* Dropdown content */
     .dropdown-content {
       display: none;
       position: absolute;
@@ -108,8 +106,6 @@
     .dropdown-content a:hover {
       background: rgba(255 255 255 / 0.3);
     }
-
-    /* Show dropdown on hover */
     .dropdown:hover .dropdown-content {
       display: flex;
       flex-direction: column;
@@ -182,7 +178,6 @@
       margin: 0 auto;
     }
 
-    /* Hero styles */
     .hero {
       margin-bottom: 3rem;
     }
@@ -199,7 +194,6 @@
       margin: 0 auto;
     }
 
-    /* Contact section styles */
     .section {
       background: white;
       padding: 3rem 2rem;
@@ -248,20 +242,44 @@
       color: var(--text-color);
     }
 
-    /* Bottom bar */
-    .bottom-bar {
+    /* New bottom footer bar */
+    .bottom-footer {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
       background: var(--primary-color);
       color: white;
-      text-align: center;
-      padding: 0.75rem 1rem;
-      font-weight: 600;
-      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
       z-index: 1000;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .bottom-footer .left-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .bottom-footer .center-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    .bottom-footer .right-button {
+      background: var(--accent-color); /* blush peach */
+      color: var(--primary-color);
+      border: none;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.5rem 1.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .bottom-footer .right-button:hover {
+      background: var(--primary-color);
+      color: white;
     }
 
     @media (max-width: 768px) {
@@ -290,6 +308,20 @@
       }
       .section {
         padding: 2rem 1rem;
+      }
+      .bottom-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        text-align: center;
+      }
+      .bottom-footer .left-text,
+      .bottom-footer .center-text {
+        font-size: 1.1rem;
+      }
+      .bottom-footer .right-button {
+        width: 100%;
+        padding: 0.75rem;
       }
     }
   </style>
@@ -355,8 +387,10 @@
     &copy; 2025 Hot Mess Sculpt. All rights reserved.
   </footer>
 
-  <div class="bottom-bar">
-    The Hot Mess Sculpt app coming soon! Sign up to be the first to know.
+  <div class="bottom-footer">
+    <div class="left-text">Coming soon to Union County, NJ</div>
+    <div class="center-text">Open Daily</div>
+    <button class="right-button" onclick="window.location.href='index.html#booking'">Join Now</button>
   </div>
 </body>
 </html>
