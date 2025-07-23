@@ -39,7 +39,24 @@
       flex-shrink: 0;
     }
 
-    /* Center container for logo */
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    nav a:hover {
+      background: rgba(255 255 255 / 0.2);
+    }
+
     .logo-container {
       position: absolute;
       left: 50%;
@@ -59,24 +76,6 @@
       opacity: 0.8;
     }
 
-    nav {
-      display: flex;
-      gap: 1.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      transition: background 0.3s ease;
-    }
-    nav a:hover {
-      background: rgba(255 255 255 / 0.2);
-    }
-
     .header-right {
       display: flex;
       align-items: center;
@@ -85,7 +84,6 @@
       font-weight: 600;
     }
 
-    /* Social icons */
     .social-icons {
       display: flex;
       gap: 1rem;
@@ -105,7 +103,6 @@
       fill: white;
     }
 
-    /* Login link */
     .login-link {
       color: white;
       text-decoration: none;
@@ -118,7 +115,6 @@
       background: rgba(255 255 255 / 0.2);
     }
 
-    /* Join Now button */
     .join-button {
       background: var(--highlight-color);
       color: var(--primary-color);
@@ -135,7 +131,6 @@
       color: white;
     }
 
-    /* Main content wrapper to center hero vertically */
     main {
       flex-grow: 1;
       display: flex;
@@ -148,7 +143,6 @@
       margin: 0 auto;
     }
 
-    /* Hero styles */
     .hero {
       margin-bottom: 3rem;
     }
@@ -165,7 +159,6 @@
       margin: 0 auto;
     }
 
-    /* Contact section styles */
     .section {
       background: white;
       padding: 3rem 2rem;
@@ -248,9 +241,9 @@
   <header>
     <nav>
       <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="booking.html">Booking</a>
-      <a href="#contact">Contact</a>
+      <a href="class-formats.html">Class Formats</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faqs.html">FAQs</a>
     </nav>
 
     <div class="logo-container">
@@ -276,7 +269,7 @@
     <section class="hero">
       <h1 class="main-title">Hot Mess Sculpt</h1>
       <p class="description">
-        At Hot Mess Sculpt, every class is a full-body, full-sweat experience powered by infrared heat, set to curated playlists, and led by instructors who balance challenge with creativity. Our beat-based formats blend music, movement, and heat to unlock strength, clarity, and energy - and most of all, to empower you to own your body, your mindset, and your movement.
+        At Hot Mess Sculpt, every class is a full-body, full-sweat experience powered by infrared heat, set to curated playlists, and led by instructors who balance challenge with creativity. Our beat-based formats blend music, movement, and heat to unlock strength, clarity, and energy — and most of all, to empower you to own your body, your mindset, and your movement.
       </p>
     </section>
 
