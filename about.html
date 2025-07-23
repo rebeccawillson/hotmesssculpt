@@ -65,6 +65,7 @@
       font-size: 1rem;
       flex-wrap: wrap;
       position: relative;
+      align-items: center; /* Align nav items vertically */
     }
     nav a, nav .dropdown-toggle {
       color: white;
@@ -73,6 +74,8 @@
       border-radius: 4px;
       transition: background 0.3s ease;
       cursor: pointer;
+      display: flex;
+      align-items: center; /* Vertically center text */
     }
     nav a:hover, nav .dropdown-toggle:hover {
       background: rgba(255 255 255 / 0.2);
@@ -168,20 +171,23 @@
     main {
       flex-grow: 1;
       padding: 3rem 2rem;
-      max-width: 900px;
-      margin: 0 auto 3rem auto;
+      max-width: 700px;
+      margin: 2rem auto 3rem auto; /* added margin-top to separate from header */
       background: white;
       border-radius: 12px;
       box-shadow: 0 8px 15px rgba(0,0,0,0.1);
       color: var(--text-color);
+      text-align: left;
+      line-height: 1.6;
     }
     main h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      text-transform: capitalize;
     }
     main p {
       font-size: 1.1rem;
-      line-height: 1.6;
+      white-space: pre-line; /* keep line breaks from text */
     }
 
     footer {
@@ -214,6 +220,7 @@
       main {
         padding: 2rem 1rem;
         margin-bottom: 2rem;
+        max-width: 90%;
       }
     }
   </style>
@@ -255,11 +262,16 @@
   </header>
 
   <main>
-    <h1>About Hot Mess Sculpt</h1>
+    <h1>About</h1>
     <p>
-      Hot Mess Sculpt is a body sculpting business offering non-invasive treatments to help you feel confident and fabulous. We’re all about boosting your glow with expert care and good vibes.
+      Hot Mess Sculpt is where music, movement, and heat come together to create a workout experience like no other. We offer full-body, full-sweat classes that challenge you, uplift you, and leave you feeling strong, confident, and empowered.<br><br>
+
+      Our infrared-heated studio offers a variety of high-energy class formats to keep your routine fresh- including formats such as sculpt, power yoga, HIIT, pilates, and strength. Every class is set to a curated playlist and led by top instructors.<br><br>
+
+      We’re not here for perfection - we’re here for real people who want to move, sweat, and feel good doing it. Whether you’re here to gain strength, increase flexibility, build endurance, clear your mind, or just to let loose, there is a spot for you in the Hot Mess Fam.<br><br>
+
+      Coming to Union County, NJ in Fall 2025
     </p>
-    <!-- You can add more detailed content here if you'd like -->
   </main>
 
   <footer>
